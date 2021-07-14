@@ -1,5 +1,3 @@
-# ionic-timer-app
- Basic timer application. Built with Ionic. :stopwatch: IonTimer
 # IonTimer
 
 <img src="https://user-images.githubusercontent.com/52351749/125502495-3fcf7198-6143-458c-b1d2-9b6d4c4bbd4a.png" align="right" width="305" height="auto"/>
