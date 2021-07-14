@@ -1,0 +1,62 @@
+<ion-content padding>
+  <ion-item color="dark">
+    <ion-label>Rest Duration</ion-label>
+    <ion-datetime display-format="mm:ss" placeholder="Tap here" [(ngModel)]="fullTime"></ion-datetime>
+  </ion-item>
+
+  <circle-progress (click)="startTimer()"
+    [percent]="percent"
+    [maxPercent]="100"
+    [radius]="radius"
+    [showTitle]="false"
+    [showSubtitle]="false"
+    [showUnits]="false"
+    [outerStrokeWidth]="16"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#141e30'"
+    [showZeroOuterStroke]="false"
+    [backgroundStroke]="'#dfa579'"
+    [backgroundStrokeWidth]="1"
+    [outerStrokeGradient]="true"
+    [outerStrokeGradientStopColor]="'#ff7e5f'"
+    [showInnerStroke]="false"
+    [innerStrokeColor] = "'#753a88'"
+    [innerStrokeWidth] = "1"
+  ></circle-progress>
+  
+  <p>{{ elapsed.h }}:{{ elapsed.m }}:{{ elapsed.s }}</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="margin-top:2rem">
+        <div>
+          <ion-fab vertical="bottom" horizontal="end" slot="fixed"> 
+            <ion-fab-button (click)="resetTimer()">
+              <ion-icon name="refresh"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </div>
+      </ion-col>
+      <ion-col color="medium">
+        <div>
+          <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+            <ng-container *ngIf="timer == false;else running" >
+              <ion-fab-button (click)="startTimer()">
+                <ion-icon name="play"></ion-icon>
+              </ion-fab-button>
+            </ng-container>
+        
+            <ng-template #running>
+              <ion-fab-button (click)="pauseTimer()">
+                <ion-icon name="pause"></ion-icon>
+              </ion-fab-button>
+            </ng-template>
+          </ion-fab>
+        </div>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+  
+ 
+  
+</ion-content>
